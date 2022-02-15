@@ -1,0 +1,28 @@
+class shape{
+    public void computeArea(){
+        double area=0;
+    }
+}
+class circle extends shape{
+   //double radius;
+    double area;
+   public void computeArea( double radius){
+        area=3.14*(radius*radius);
+        System.out.println( area);
+    }
+}
+class rectangle extends shape{
+     public void computeArea( double lengh , double breath){
+        double area=lengh*breath;
+        //return area;
+    }
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+		shape obj=new circle() ;
+		double s=obj.computeArea(5);
+		System.out.println(s);
+	}
+}

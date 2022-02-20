@@ -1,5 +1,6 @@
+// sort words in ascending order of their length
 
-import java.util.Scanner;  // Import the Scanner class
+import java.util.Scanner;  
 
 public class Main
 {

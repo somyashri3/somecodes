@@ -80,3 +80,105 @@ int n;
       cout<<"Yes Two";
 */
 }
+// 3
+// 1House 1Road 1Land
+// Happy Sad Happy
+
+#include <bits/stdc++.h>
+#include <iostream>
+using namespace std;
+int main(){
+int n;
+  cin>>n;
+  int digit[n];
+  string s[n];
+  string iemo[n];
+  string emo_list[4]={"Happy","Sad","Neutral","None"};
+  int emo_point[4]={10,5,2,1};
+  int total_score=0;
+  for(int i=0;i<n;i++){
+  	cin>>digit[i];
+    cin>>s[i];
+    
+    // cout<<digit[i]<<s[i];
+  }
+    for(int i=0;i<n;i++){
+  	cin>>iemo[i];
+  }
+  for(int i=0;i<n;i++){
+    if(iemo[i]==emo_list[0]){
+  	total_score=(total_score+(digit[i]  * emo_point[0]));
+//   	cout<<digit[i]<<" "<<emo_point[0]<<" "<<total_score<<" ";
+    }
+    else if(iemo[i]==emo_list[1]){
+  	total_score=total_score+(digit[i] * emo_point[1]);
+//   	cout<<digit[i]<<" "<<emo_point[0]<<" "<<total_score<<" ";
+
+    }
+    else if(iemo[i]==emo_list[2]){
+  	total_score=total_score+(digit[i] * emo_point[2]);
+//   	cout<<digit[i]<<" "<<emo_point[0]<<" "<<total_score<<" ";
+
+    }
+    else if(iemo[i]==emo_list[3]){
+  	total_score=total_score+(digit[i]*emo_point[3]);
+//   	cout<<digit[i]<<" "<<emo_point[0]<<" "<<total_score<<" ";
+
+    }
+    // else
+    // // cout<<"np"<<" ";
+   }
+  //vowel count
+    int v_count = 0;
+    int total_v_count=0;
+  for(int j=0;j<n;j++){
+    int x=s[j].length();
+    for(int i = 0; i<x; i++)  
+    {
+        if(s[j][i]=='a'|| s[j][i]=='e'||s[j][i]=='i'||s[j][i]=='o'||s[j][i]=='u'
+        ||s[j][i]=='A'||s[j][i]=='E'||s[j][i]=='I'||s[j][i]=='O' ||s[j][i]=='U')
+        {
+		    v_count++;
+        }
+      
+    }
+    total_v_count=total_v_count+(v_count*digit[j]);
+    // cout<<"count"<<total_v_count<<" "<<v_count<<" "<<digit[j]<<" ";
+    v_count=0;
+  }
+ int num=total_score/total_v_count;
+  
+  //check prime
+
+   bool flag = true;
+
+   for(int i = 2; i <= num / 2; i++) {
+      if(num % i == 0) {
+         flag = false;
+         break;
+      }
+   }
+   if (flag==true)
+      cout<<"Yes";
+   else
+      cout<<"No";
+
+   if(num==1)
+  cout<<" "<<"One";
+  else if(num==2)
+  cout<<" "<<"Two";
+  else if(num==3)
+  cout<<" "<<"Three";
+  else if(num==4)
+  cout<<" "<<"Four";
+  else if(num==5)
+  cout<<" "<<"Five";
+  else if(num==6)
+  cout<<" "<<"Six";
+  else if(num==7)
+  cout<<" "<<"Seven";
+  else if(num==8)
+  cout<<" "<<"eight";
+  else if(num==9)
+  cout<<" "<<"Nine";
+}

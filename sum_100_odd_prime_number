@@ -1,0 +1,36 @@
+
+
+
+public class Main
+{
+	public static void main(String[] args) {
+      int status = 1;
+      int sum=0;
+      int c=0;
+      int Number = 3;
+
+      for ( int i = 2 ; i <=100 ;  )
+      {
+         for ( int j = 2 ; j <= Math.sqrt(Number) ; j++ )
+         {
+            if ( Number%j == 0 )
+            {
+               status = 0;
+               break;
+            }
+         }
+         if ( status != 0 )
+         {
+            if(c%2==1){
+            sum=sum +Number;
+            }
+            c++;
+            i++;
+         }
+         status = 1;
+         Number++;
+      }   
+      System.out.println(sum+2);
+
+	}
+}
